@@ -1,8 +1,11 @@
 package detect
 
 import (
+	"fmt"
 	"os"
 	"strings"
+
+	network "github.com/karl/identify-environment/network"
 )
 
 type LinuxBareMetalDetector struct{}
@@ -25,5 +28,6 @@ func (l *LinuxBareMetalDetector) Detect() bool {
 }
 
 func (l *LinuxBareMetalDetector) Info() string {
+	fmt.Println(network.GetAdapterInfos())
 	return "Running on bare-metal hardware (Linux)."
 }

@@ -1,8 +1,10 @@
 package detect
 
 import (
+	"fmt"
 	"strings"
 
+	network "github.com/karl/identify-environment/network"
 	"github.com/yusufpapurcu/wmi"
 )
 
@@ -28,5 +30,6 @@ func (w *WindowsBareMetalDetector) Detect() bool {
 }
 
 func (w *WindowsBareMetalDetector) Info() string {
+	fmt.Println(network.GetAdapterInfos())
 	return "Running on bare-metal hardware (Windows)."
 }

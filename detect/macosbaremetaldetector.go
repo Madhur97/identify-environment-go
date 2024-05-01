@@ -1,8 +1,11 @@
 package detect
 
 import (
+	"fmt"
 	"os/exec"
 	"strings"
+
+	network "github.com/karl/identify-environment/network"
 )
 
 type MacOSBareMetalDetector struct{}
@@ -22,5 +25,6 @@ func (m *MacOSBareMetalDetector) Detect() bool {
 }
 
 func (m *MacOSBareMetalDetector) Info() string {
+	fmt.Println(network.GetAdapterInfos())
 	return "Running on bare-metal hardware (macOS)."
 }
