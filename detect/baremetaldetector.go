@@ -1,29 +1,31 @@
 package detect
 
 import (
-	"runtime"
+	"errors"
+	"fmt"
+
+	network "github.com/karl/identify-environment/network"
 )
 
 // BareMetalDetector checks for indications of a non-virtualized environment
 type BareMetalDetector struct{}
 
-func (BareMetalDetector) Detect() bool {
-	return getBareMetalDetector().Detect()
-}
-
-func getBareMetalDetector() Detector {
-	switch runtime.GOOS {
-	case "linux":
-		return &LinuxBareMetalDetector{}
-	case "windows":
-		return &WindowsBareMetalDetector{}
-	case "darwin":
-		return &MacOSBareMetalDetector{}
-
+func (BareMetalDetector) GetIdentifiers() ([]string, error) {
+	adapters, err := network.GetAdapterInfos()
+	var macAdresses []string
+	if err != nil {
+		return macAdresses, err
 	}
-	return nil
-}
-
-func (b BareMetalDetector) Info() string {
-	return getBareMetalDetector().Info()
+	for _, adapter := range adapters {
+		if adapter.MACAddress == "" {
+			fmt.Println("No MAC address found for interface - " + adapter.Name)
+			continue
+		}
+		macAdresses = append(macAdresses, adapter.MACAddress)
+	}
+	if len(macAdresses) == 0 {
+		return macAdresses, errors.New("No adapters found")
+	}
+	fmt.Println(macAdresses)
+	return macAdresses, nil
 }
