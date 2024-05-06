@@ -1,6 +1,6 @@
 [F1]
-lic_ver       = 1
-valid-to-date = 2024-12-31
-envtype       = baremetal
-mac_address   = bc:03:58:d9:2c:bs
-sig           = nXuyj6ULQ9Z4JemNallMWQwlEsf5NIn3l+SbRV290I7z1lbljwl4UTwgbVv7s7HsXiDQmW5jp1nPxOcxVzEHmR2H0ynyrJcHPhDVKWgS8jIG/sfzsyBrW87LwrRHY0q5BTfuw9Oxh3ji3U4x7V6ldORqlxo9QVfJ85L6GSlX+9wgtEjTkh5dilnWpZZkU/Vzob+pQa/FWmw03fkh6y8m3vGN8E7VT1drQrXC2LSiYokfToxB6yjxgoFpBP1yIJC/HKiiBrkwrgxGbJ1EMrRFjAAEPQCbmQ+xSj6R3fAYbbMWKw/HxMO5bnuoVmTeYFobWz1KQoOxFvJKqOh6QDMrBw==
+lic_ver        = 1
+valid-to-date  = 2024-12-31
+envtype        = azure
+azure_subs_key = af8122ad-95d3-4abd-9c06-f854a586ae02
+sig            = EXohlFKBlx5nMsE5UVv4NxRy8yX0u+EGJRJzIocAIipDUDN0iWk/L+4G3zpDy7JxH/MOC+yL3Iivb+Oy2/NiTAb9DmGP7DxBzlY75zsicd1svv5LIThXAc/w2xaXIvZrvoBBqp6c86RdIdqtYbw0UaRXbnDUlSsHsyBPf/ts1Z/0VTAPoE61YSZLD7khpCNSrSrX8uArYjWu2dP0mYUCvHDGgpn5yr6bF4QZs8bS/QEFzUyPIN6CeawvuiI0M26TWtMnJfg8PDXUnPkAAxCd8YrFkjwHudYL5TFC6EMzQ5/3cjDJtM+7s7B+6vFSV4AB/1DiRv6KOyAT3Ti58eiIEQ==
